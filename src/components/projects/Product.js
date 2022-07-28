@@ -12,7 +12,8 @@ import PropTypes from 'prop-types';
 
 import {Col} from 'reactstrap'
 import { Card, CardImg, CardText, CardBody,CardLink,
-  CardTitle, CardSubtitle, Button,Row } from 'reactstrap';
+  CardTitle, CardSubtitle, Button,Row ,CardDeck} from 'reactstrap';
+// import './productCard.css'
 const styles = theme => ({
   // close: {
   //   width: theme.spacing.unit * 4,
@@ -107,11 +108,11 @@ class Product extends Component {
 
 
          
-          <Col xs="3">
+          <Col xs="6">
 
 
-
-        <Card>
+          <CardDeck>
+        <Card className='wrapper' width='auto'>
         {/* {product} */}
           <CardImg top
           style={{'width':'14rem','margin-top':'1rem'}}
@@ -150,7 +151,19 @@ class Product extends Component {
             </Link>
 
           </CardBody>
+          {/* <div className="card">
+            <img src={product.url} className="card__img" />
+            <div className="card__body">
+              <h2 className="card__title">{product.Category.value}</h2>
+              <p className="card__description">{product.name}</p>
+              <h3 className="card__price">{product.price} T</h3>
+              <button className="card__btn">Add to Cart</button>
+            </div>
+            
+            
+            </div> */}
         </Card>
+        </CardDeck>
 
 
 

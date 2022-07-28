@@ -95,16 +95,18 @@ class Products extends Component {
       const filtered = Object.values(obj.Category.value);
       let concatedArray = [];
       let buffer = "";
-      // console.log('Filtered до цикла  ', filtered)
+      console.log('Filtered до цикла  ', filtered)
       buffer = filtered.join("");
       concatedArray.push(buffer, obj);
       // console.log('buffer ',buffer)
       // console.log('obj',obj)
       console.log("3 pickedCategory is ", pickedCategory);
+      
       if (buffer === this.state.pickedCategory.toString()) {
         this.state.newArray.push(concatedArray[1]);
         console.log("4 NewArray -  ", this.state.newArray);
       }
+
       // if (newArray.length === 0) return <p>Выберите категорию товара</p>;
     });
 
@@ -130,18 +132,25 @@ class Products extends Component {
     if (products.length > 0) {
       return (
         <>
-          <Container style={{ "padding-left": "0px" }}>
+          <Container style={{ "padding-left": "0px"}}>
             <br />
             <Nav onClick={this.selectCategory}>
-              <NavItem>
-                <Button value="smartphone" color="secondary" size="sm">
-                  СМАРТФОНЫ
-                </Button>{" "}
-              </NavItem>
+           
+          
+
+
+
+
+            
 
               <NavItem>
                 <Button value="pads" color="secondary" size="sm">
                   ПЛАНШЕТЫ
+                </Button>{" "}
+              </NavItem>
+              <NavItem>
+                <Button value="smartphone" color="secondary" size="sm">
+                  СМАРТФОНЫ
                 </Button>{" "}
               </NavItem>
               <NavItem>
@@ -199,7 +208,9 @@ class Products extends Component {
 
             ))} */}
 
-                  {this.state.pickedCategory === "smartphone" ? (
+                  {
+                    
+                    this.state.pickedCategory === "smartphone" ? (
                     this.getFilteredProducts()
                   ) : this.state.pickedCategory === "pads" ? (
                     this.getFilteredProducts()
@@ -222,10 +233,12 @@ class Products extends Component {
                     </h1>
                   )}
 
+                 
                   <Pagination
                     items={products}
                     onChangePage={this.onChangePage}
                   />
+
                 </Row>
               </Col>
             </Row>

@@ -12,7 +12,7 @@ import { storage } from '../../config/fbConfig';
 
 const options = [
    
-  { value: 'smartphones',  label: 'СМАРТФОНЫ'},
+  { value: 'smartphone',  label: 'СМАРТФОНЫ'},
   { value: 'pads',  label: 'ПЛАНШЕТЫ'},
   { value: 'notebooks',   label: 'НОУТБУКИ'},
   { value: 'smartwatches',   label: 'СМАРТ-ЧАСЫ'},
